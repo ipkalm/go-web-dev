@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Greetings</title>
+</head>
+<body>
+    
+    <h1> The bands are:</h1>
+    <ul>
+        {{range $i, $b := .}}
+        <li>{{$b}} by № {{$i}}</li>
+        {{end}}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Greetings</title>
+</head>
+<body>
+    <h1>Print structs with slice of structs</h1>
+    <ul>
+        {{range .Bands}}
+        <li>{{.Name}} plays {{.Genre}}</li>
+        {{end}}
+    </ul>
+
+    <ul>
+        {{range .Concerts}}
+        <li>Concert in {{.City}} :: {{.Date}}</li>
+        {{end}}
+    </ul>
+</body>
+</html>
