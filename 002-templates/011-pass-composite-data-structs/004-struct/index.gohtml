@@ -7,9 +7,9 @@
 <body>
     <h1>Two types of print the same thing</h1>
 
-    <h2>1. From { .Field_Of_Struct }<br>The {{.Name}} plays {{.Genre}}</h2>
+    <h2>1. From {{`{{.Field_Of_Struct}}`}}<br>The {{.Name}} plays {{.Genre}}</h2>
     {{$band := .Name}}
     {{$genre := .Genre}}
-    <h2>2. From assing variable `{ { $band := .Name } }`<br>The {{$band}} plays {{$genre}}</h2>
+    <h2>2. From assing variable {{`{{$band := .Name}}`}}<br>The {{$band}} plays {{$genre}}</h2>
 </body>
 </html>
