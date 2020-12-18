@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>pass func to text/template and pipeline</title>
+</head>
+
+<body>
+
+    <h1>pipeline demonstration</h1>
+    <p>value {{.}}</p>
+    <p>{{`{{ . | fDbl}}`}} :: {{ . | fDbl}}</p>
+    <p>{{`{{ . | fDbl | fSq}}`}} :: {{ . | fDbl | fSq}}</p>
+    <p>{{`{{ . | fDbl | fSq | fSqrt }}`}} :: {{ . | fDbl | fSq | fSqrt }}</p>
+
+</body>
+
+</html>
