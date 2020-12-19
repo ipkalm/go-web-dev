@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>pass func to text/template</title>
+</head>
+
+<body>
+<h1>compare data in templates. s1 = {{.S1}} and s2 = {{.S2}}</h1>
+<h2>first</h2>
+<div>
+    {{if gt .S1 .S2}}
+    s1 > s2
+    {{end}}
+</div>
+<h2>second</h2>
+<div>
+    {{if lt .S1 .S2}}
+    s1 < s2
+    {{end}}
+</div>
+<h2>third</h2>
+<div>
+    {{if eq .S1 .S2}}
+    s1 = s2
+    {{end}}
+</div>
+<h2>fourth</h2>
+<div>
+    {{if lt .S1 100}}
+    s1 < 100
+    {{end}}
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>pass func to text/template</title>
+</head>
+
+<body>
+    <h1>teamplate funcs</h1>
+    <p>{{index .Bands 2}}</p>
+    <p>{{index .Bands 0}}</p>
+    <p>{{index .Bands 1}}</p>
+    <p>{{.Type}}</p>
+
+    <!--index return item in position from slice
+        {{`{{index x 1 2 3}}`}} eq Go syntax x[1][2][3]-->
+
+    <!--Go teamplate comment syntax
+    here : {{/*(index .Band 3).Genre*/}}
+    in src: {{`{{/*(index .Band 3).Genre*/}}`}}-->
+
+</body>
+</html>

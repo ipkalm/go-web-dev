@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>pass func to text/template</title>
+</head>
+
+<body>
+    <h1>few examples</h1>
+    <h2>first</h2>
+    <div>
+        {{range .}}
+        <p>1# :: {{.}}</p>
+        {{end}}
+    </div>
+    <h2>second</h2>
+    <div>
+        {{if .}}
+        <p>2# :: {{.}}</p>
+        {{end}}
+    </div>
+    <h2>third</h2>
+    <div>
+        {{range .}}
+        {{if .Nickname}}
+        <p>3# :: {{.Nickname}}</p>
+        {{end}}
+        {{end}}
+    </div>
+    <h2>fourth</h2>
+    <div>
+        {{range .}}
+        {{if and .Nickname .Admin}}
+        <p>4# :: {{.Nickname}} is admin and his email "{{.Email}}"</p>
+        {{end}}
+        {{end}}
+    </div>
+</body>
+
+</html>
