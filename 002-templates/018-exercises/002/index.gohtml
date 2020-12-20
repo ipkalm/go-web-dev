@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hotels base</h1>
+
+    {{range .}}
+
+    <h2>{{.Region}}</h2>
+
+        {{range .Cities}}
+        <h3>{{.City}}</h3>
+            <ol>
+            {{range .Hotels}}
+                <li>
+                    <ul>
+                        <li>NAME :: {{.Name}}</li>
+                        <li>ADDRESS :: {{.Address}}</li>
+                        <li>ZIP :: {{.ZIP}}</li>
+                    </ul>
+                </li>
+                <br>
+            {{end}}
+            </ol>
+        {{end}}
+    
+
+    {{end}}
+</body>
+</html>
