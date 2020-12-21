@@ -24,6 +24,7 @@ func main() {
 		io.WriteString(c, "\nHello, Gopher. It is TCP server\n")
 		fmt.Fprintln(c, "how are you?")
 		fmt.Fprintf(c, "%v, %T\n", s, s)
+
 		c.Close()
 	}
 }
