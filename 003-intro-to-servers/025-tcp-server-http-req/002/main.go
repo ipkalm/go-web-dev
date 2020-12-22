@@ -26,6 +26,7 @@ func main() {
 }
 
 func handle(c net.Conn) {
+	defer c.Close()
 	req := getRequest(c)
 	response(c, req)
 }
@@ -52,8 +53,6 @@ func getRequest(c net.Conn) map[string]string {
 }
 
 func response(c net.Conn, req map[string]string) {
-	defer c.Close()
-
 	var innerHTML string
 	var codeAndReason string
 	var code uint16 = 200
