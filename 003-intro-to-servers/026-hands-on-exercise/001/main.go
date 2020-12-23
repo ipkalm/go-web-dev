@@ -92,9 +92,9 @@ func response(c net.Conn, req map[string]string) {
 		if req["METHOD"] == "POST" {
 			innerHTML = `<nav>
 				<ul>
-				<li><a href="/index">index</a></li>
-				<li><a href="#">blog</a></li>
-				<li><a href="/about">about</a></li>
+				<li><a href="/">index</a></li>
+				<li><a href="/blog/">blog</a></li>
+				<li><a href="/about/">about</a></li>
 				<li><a href="/signin/">sign in</a></li>
 				</ul>
 				</nav>
@@ -102,9 +102,9 @@ func response(c net.Conn, req map[string]string) {
 		} else {
 			innerHTML = `<nav>
 				<ul>
-				<li><a href="/index">index</a></li>
+				<li><a href="/">index</a></li>
 				<li><a href="#">blog</a></li>
-				<li><a href="/about">about</a></li>
+				<li><a href="/about/">about</a></li>
 				<li><a href="/signin/">sign in</a></li>
 				</ul>
 				</nav>
