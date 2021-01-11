@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/" method="POST">
+        <input type="text" name="fname" placeholder="first name" autofocus autocomplete="off">
+        <input type="submit" name="submit-btn" value="button">
+    </form>
+    
+    {{if .}}
+    <main>
+        <p><strong>METHOD</strong>:<em>{{.Method}}</em></p>
+        <p><strong>URL</strong>:<em>{{.URL}}</em></p>
+        <p><strong>ContentLength</strong>:<em>{{.ContLength}}</em></p>
+        <p><strong>Headers</strong>:</p>
+        {{range $k, $v := .Header}}
+            <p><strong>{{$k}}</strong></p>
+            <ul>
+                {{range $v}}
+                <li><em>{{.}}</em></li>
+                {{end}}
+            </ul>
+        {{end}}
+        <p><strong>vars</strong>(identifiers) and <em>vlues</em>:</p>
+        {{range $k, $v := .Subm}}
+            <p><strong>{{$k}}</strong></p>
+            <ul>
+                {{range $v}}
+                <li><em>{{.}}</em></li>
+                {{end}}
+            </ul>
+        {{end}}
+    </main>
+    {{end}}
+
+</body>
+</html>
