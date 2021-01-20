@@ -1,0 +1,14 @@
+h1 {
+    color: rebeccapurple;
+}
+
+img {
+    border: royalblue;
+    border-width: 1px;
+    border-radius: 25%;
+}
+
+body {
+    margin: auto 100px;
+    text-align: center;
+}
