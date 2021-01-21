@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/" method="post">
+        <input type="text" name="first" id="first" placeholder="first name" autofocus>
+        <input type="text" name="last" id="last" placeholder="last name">
+        <input type="checkbox" name="subscribe" id="subscribe">
+        <input type="submit" value="subscribe">
+    </form>
+
+    {{if .}}
+    <p>First Name: {{.FName}}</p>
+    <p>Last Name: {{.LName}}</p>
+    <p>Subscribed: {{.Sub}}</p>
+    {{end}}
+</body>
+</html>
