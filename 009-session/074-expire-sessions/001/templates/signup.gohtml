@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+</head>
+<body>
+    <form action="/signup" method="post">
+        <input type="text" name="nick" id="f-nick" placeholder="nickname" autofocus>
+        <input type="text" name="fname" id="f-fname" placeholder="first name">
+        <input type="text" name="lname" id="f-lname"
+        placeholder="last name">
+        <input type="password" name="passwd" id="f-pwd" placeholder="password">
+        <label for="f-roles">choose role:</label>
+        <select name="roles" id="f-roles">
+            <option value="007">007</option>
+            <option value="admin">admin</option>
+            <option value="user">user</option>
+        </select>
+        <input type="submit" name="submit" id="f-submit">
+    </form>
+</body>
+</html>
