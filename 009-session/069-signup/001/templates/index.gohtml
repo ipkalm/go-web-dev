@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+</head>
+<body>
+    {{if .Nick}}
+        <pre>
+NICK NAME {{.Nick}}
+FIRST {{.Fname}}
+LAST {{.Lname}}
+        </pre>
+    {{else}}
+        <h2><a href="/signup">sign up</a></h2>
+    {{end}}
+    
+    <br>
+    <h2>Go to the <a href="/bar">bar</a></h2>
+</body>
+</html>
