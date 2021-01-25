@@ -52,6 +52,11 @@ func index(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 		path := filepath.Join(wd, "public", "pics", fname)
 
 		nf, err := os.Create(path)
+		if err != nil {
+			log.Panicln(err)
+		}
+		nf.Close()
+
 		f.Seek(0, 0)
 		_, err = io.Copy(nf, f)
 		if err != nil {
