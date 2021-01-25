@@ -24,6 +24,9 @@ func main() {
 	r := httprouter.New()
 	r.GET("/", index)
 	r.POST("/", index)
+
+	r.ServeFiles("/public/*filepath", http.Dir("./public/"))
+
 	log.Fatalln(http.ListenAndServe("127.0.0.1:8080", r))
 }
 
@@ -55,7 +58,7 @@ func index(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 		if err != nil {
 			log.Panicln(err)
 		}
-		nf.Close()
+		defer nf.Close()
 
 		f.Seek(0, 0)
 		_, err = io.Copy(nf, f)
@@ -67,5 +70,5 @@ func index(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	}
 
 	xs := strings.Split(c.Value, "|")
-	t.ExecuteTemplate(w, "index.gohtml", xs)
+	t.ExecuteTemplate(w, "index.gohtml", xs[1:])
 }
