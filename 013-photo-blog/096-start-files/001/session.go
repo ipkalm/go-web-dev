@@ -20,19 +20,10 @@ func getCookie(w http.ResponseWriter, r *http.Request) *http.Cookie {
 	return c
 }
 
-func appendValues(w http.ResponseWriter, c *http.Cookie) *http.Cookie {
-	p1 := "p1.jpg"
-	p2 := "p2.jpg"
-	p3 := "p3.jpg"
-
+func appendValues(w http.ResponseWriter, c *http.Cookie, n string) *http.Cookie {
 	s := c.Value
-	switch {
-	case !strings.Contains(s, p1):
-		s += "|" + p1
-	case !strings.Contains(s, p2):
-		s += "|" + p2
-	case !strings.Contains(s, p3):
-		s += "|" + p3
+	if !strings.Contains(s, n) {
+		s += "|" + n
 	}
 	c.Value = s
 	c.MaxAge = 300
