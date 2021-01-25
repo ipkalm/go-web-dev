@@ -21,5 +21,5 @@ func main() {
 }
 
 func index(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
-	t.ExecuteTemplate(w, "index.gohtml", nil)
+	t.ExecuteTemplate(w, "index.gohtml", getCookie(w, r).Value)
 }
