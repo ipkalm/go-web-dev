@@ -4,6 +4,7 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"strings"
 
 	"github.com/julienschmidt/httprouter"
 )
@@ -21,5 +22,8 @@ func main() {
 }
 
 func index(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
-	t.ExecuteTemplate(w, "index.gohtml", getCookie(w, r).Value)
+	c := getCookie(w, r)
+	c = appendValues(w, c)
+	xs := strings.Split(c.Value, "|")
+	t.ExecuteTemplate(w, "index.gohtml", xs)
 }
