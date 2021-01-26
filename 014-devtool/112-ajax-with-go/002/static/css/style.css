@@ -1,0 +1,12 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-style: 5vw;
+    cursor: pointer;
+    text-decoration: underline;
+}

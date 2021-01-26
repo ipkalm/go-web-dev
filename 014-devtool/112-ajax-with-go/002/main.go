@@ -19,7 +19,9 @@ func main() {
 	r := httprouter.New()
 	r.GET("/", index)
 	r.GET("/boo", boo)
-	r.ServeFiles("/js/*filepath", http.Dir("js"))
+
+	r.ServeFiles("/static/*filepath", http.Dir("static"))
+
 	log.Fatal(http.ListenAndServe("127.0.0.1:8080", r))
 }
 
