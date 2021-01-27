@@ -6,20 +6,19 @@ import (
 	"log"
 	"net/http"
 
-	"go.mongodb.org/mongo-driver/mongo"
-
 	"github.com/ipkalm/go-web-dev/015-go-mongo/117-connect-to-mongo/001/model"
 	"github.com/julienschmidt/httprouter"
+	"gopkg.in/mgo.v2"
 )
 
 // UserController provide controller for User struct
 type UserController struct {
-	client *mongo.Client
+	client *mgo.Session
 }
 
 // NewUserController return pointer to UserController struct
-func NewUserController(c *mongo.Client) *UserController {
-	return &UserController{c}
+func NewUserController(s *mgo.Session) *UserController {
+	return &UserController{s}
 }
 
 // GetUser print user by id in url

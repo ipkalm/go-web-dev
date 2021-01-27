@@ -1,22 +1,17 @@
 package app
 
 import (
-	"context"
 	"log"
 	"net/http"
-	"time"
-
-	"go.mongodb.org/mongo-driver/mongo"
-	"go.mongodb.org/mongo-driver/mongo/options"
-	"go.mongodb.org/mongo-driver/mongo/readpref"
 
 	"github.com/ipkalm/go-web-dev/015-go-mongo/117-connect-to-mongo/001/controller"
 	"github.com/julienschmidt/httprouter"
+	"gopkg.in/mgo.v2"
 )
 
 // Run launch app
 func Run() {
-	uc := controller.NewUserController(getClient())
+	uc := controller.NewUserController(getSession())
 	r := httprouter.New()
 
 	r.GET("/user/:id", uc.GetUser)
@@ -28,27 +23,10 @@ func Run() {
 	log.Fatal(http.ListenAndServe("127.0.0.1:8080", r))
 }
 
-func getClient() *mongo.Client {
-	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
-	defer cancel()
-
-	clientOpts := options.Client().ApplyURI("mongodb://root:WTzHXg80bRKUAOQC2mhF@127.0.0.1:27017")
-
-	client, err := mongo.Connect(ctx, clientOpts)
+func getSession() *mgo.Session {
+	s, err := mgo.Dial("mongodb://root:WTzHXg80bRKUAOQC2mhF@localhost:27017")
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	defer func() {
-		if err = client.Disconnect(ctx); err != nil {
-			log.Panic(err)
-		}
-	}()
-
-	err = client.Ping(ctx, readpref.Primary())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	return client
+	return s
 }
