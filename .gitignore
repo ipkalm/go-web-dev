@@ -1,3 +1,5 @@
 *.pem
 *.jpg
 *.png
+
+db.json
