@@ -215,3 +215,5 @@ func booksDeleteProcess(w http.ResponseWriter, r *http.Request, p httprouter.Par
 
 	http.Redirect(w, r, "/books", http.StatusSeeOther)
 }
+
+// TODO json func
