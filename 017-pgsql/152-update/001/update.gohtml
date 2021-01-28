@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update</title>
+</head>
+
+<body>
+    <h1>update</h1>
+    <form action="/books/update/{{.I}}" method="post">
+        <input type="text" name="isbn" id="f-isbn" placeholder="isbn" value="{{.B.Isbn}}"><br>
+        <input type="text" name="author" id="f-author" placeholder="author" value="{{.B.Author}}"><br>
+        <input type="text" name="title" id="f-title" placeholder="title" value="{{.B.Title}}"><br>
+        <input type="text" name="price" id="f-price" placeholder="price" value="{{.B.Price}}"><br>
+        <input type="submit" value="update" id="f-isbn">
+    </form>
+    <br>
+    <a href="/books">books list</a>
+</body>
+
+</html>
